@@ -19,4 +19,10 @@ This is the bug list. In this files, all the bug of the program is detailed.
   - explication:
 
 6-The agent is doing the action 0 (left) to much time when epsilon < Q-Table (Link to problem 5) (Not fix)
-  - explication: 
+  - explication:
+
+7-Teleportation of the agent on a a case like he is doing two actions in one and this appear in one action in the sequence (Link to problem 5)
+  -explication
+
+8-When the test of the Q-Table is going it is possible for the agent to have a problem of going left and right infinitly on a case
+  -explication:

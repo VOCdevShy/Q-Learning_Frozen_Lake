@@ -1,0 +1,53 @@
+Results after 100 episodes: 
+Q-table after training:
+[[0.80999999 0.         0.9        0.81      ]
+ [0.81       1.         0.9        0.9       ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]]
+Best Sequence: [1]
+Number of time that the agent reach the goal: 37
+Number of all inputs in 37 sequences:
+-0(LEFT): 29 times
+-1(DOWN): 37 times
+-2(RIGHT): 58 times
+-3(UP): 51 times
+-Total inputs: 175
+Episodes where the agent reach the goal: [0, 3, 4, 5, 6, 11, 16, 18, 22, 25, 26, 27, 33, 37, 43, 45, 46, 48, 51, 54, 56, 64, 65, 69, 70, 71, 72, 76, 78, 80, 84, 89, 90, 95, 97, 98, 99]
+Sequence 0: [1] / ['DOWN']
+Sequence 3: [0, 2, 3, 0, 2, 1] / ['LEFT', 'RIGHT', 'UP', 'LEFT', 'RIGHT', 'DOWN']
+Sequence 4: [1] / ['DOWN']
+Sequence 5: [1] / ['DOWN']
+Sequence 6: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 11: [0, 0, 3, 2, 1] / ['LEFT', 'LEFT', 'UP', 'RIGHT', 'DOWN']
+Sequence 16: [2, 3, 2, 1] / ['RIGHT', 'UP', 'RIGHT', 'DOWN']
+Sequence 18: [3, 2, 1] / ['UP', 'RIGHT', 'DOWN']
+Sequence 22: [2, 0, 0, 2, 1] / ['RIGHT', 'LEFT', 'LEFT', 'RIGHT', 'DOWN']
+Sequence 25: [1] / ['DOWN']
+Sequence 26: [0, 3, 3, 3, 2, 1] / ['LEFT', 'UP', 'UP', 'UP', 'RIGHT', 'DOWN']
+Sequence 27: [2, 3, 3, 3, 1] / ['RIGHT', 'UP', 'UP', 'UP', 'DOWN']
+Sequence 33: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 37: [2, 2, 2, 3, 3, 0, 2, 0, 2, 0, 0, 3, 2, 0, 2, 2, 2, 3, 1] / ['RIGHT', 'RIGHT', 'RIGHT', 'UP', 'UP', 'LEFT', 'RIGHT', 'LEFT', 'RIGHT', 'LEFT', 'LEFT', 'UP', 'RIGHT', 'LEFT', 'RIGHT', 'RIGHT', 'RIGHT', 'UP', 'DOWN']
+Sequence 43: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 45: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 46: [3, 2, 2, 3, 1] / ['UP', 'RIGHT', 'RIGHT', 'UP', 'DOWN']
+Sequence 48: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 51: [3, 2, 3, 2, 3, 1] / ['UP', 'RIGHT', 'UP', 'RIGHT', 'UP', 'DOWN']
+Sequence 54: [3, 3, 3, 2, 3, 1] / ['UP', 'UP', 'UP', 'RIGHT', 'UP', 'DOWN']
+Sequence 56: [3, 3, 0, 2, 1] / ['UP', 'UP', 'LEFT', 'RIGHT', 'DOWN']
+Sequence 64: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 65: [3, 3, 0, 0, 3, 3, 2, 1] / ['UP', 'UP', 'LEFT', 'LEFT', 'UP', 'UP', 'RIGHT', 'DOWN']
+Sequence 69: [0, 2, 2, 3, 1] / ['LEFT', 'RIGHT', 'RIGHT', 'UP', 'DOWN']
+Sequence 70: [2, 3, 3, 0, 3, 3, 2, 2, 2, 1] / ['RIGHT', 'UP', 'UP', 'LEFT', 'UP', 'UP', 'RIGHT', 'RIGHT', 'RIGHT', 'DOWN']
+Sequence 71: [0, 2, 1] / ['LEFT', 'RIGHT', 'DOWN']
+Sequence 72: [2, 2, 1] / ['RIGHT', 'RIGHT', 'DOWN']
+Sequence 76: [3, 3, 2, 0, 2, 0, 3, 2, 1] / ['UP', 'UP', 'RIGHT', 'LEFT', 'RIGHT', 'LEFT', 'UP', 'RIGHT', 'DOWN']
+Sequence 78: [2, 1] / ['RIGHT', 'DOWN']
+Sequence 80: [1] / ['DOWN']
+Sequence 84: [2, 2, 3, 2, 3, 0, 2, 1] / ['RIGHT', 'RIGHT', 'UP', 'RIGHT', 'UP', 'LEFT', 'RIGHT', 'DOWN']
+Sequence 89: [0, 2, 0, 3, 3, 3, 3, 2, 1] / ['LEFT', 'RIGHT', 'LEFT', 'UP', 'UP', 'UP', 'UP', 'RIGHT', 'DOWN']
+Sequence 90: [0, 3, 0, 0, 3, 2, 3, 1] / ['LEFT', 'UP', 'LEFT', 'LEFT', 'UP', 'RIGHT', 'UP', 'DOWN']
+Sequence 95: [1] / ['DOWN']
+Sequence 97: [2, 2, 2, 0, 3, 2, 3, 3, 1] / ['RIGHT', 'RIGHT', 'RIGHT', 'LEFT', 'UP', 'RIGHT', 'UP', 'UP', 'DOWN']
+Sequence 98: [3, 2, 3, 0, 0, 2, 1] / ['UP', 'RIGHT', 'UP', 'LEFT', 'LEFT', 'RIGHT', 'DOWN']
+Sequence 99: [1] / ['DOWN']
+Success rate = 37.0%

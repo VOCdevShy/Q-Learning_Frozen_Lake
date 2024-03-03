@@ -1,0 +1,98 @@
+import gym
+import matplotlib.pyplot as plt
+import numpy as np
+from IPython.display import clear_output
+import time
+
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams.update({'font.size': 17})
+
+# Create the game environment
+env = gym.make('FrozenLake-v1', desc=["SFFF", "FHFH", "FFFH", "HFFG"],\
+               map_name="4x4", \
+               render_mode="human", is_slippery=False)
+
+#Q-tbale calculation
+qtable = np.zeros((env.observation_space.n, env.action_space.n))
+
+# Hyperparameters
+episodes = 25 # Total of episodes
+alpha = 0.5  # Learning Rate
+gamma = 0.9  # Discount factor
+epsilon = 1.0  # Amount of randomness in the action selection
+epsilon_decay = 0.001  # Fixed amount to decrease
+outcome = []  # List of outcomes to plot
+best_sequence = []
+reward_counter = 0
+
+# show the Q-table
+print('Q-table before training: ')
+print(qtable)
+print(' ')
+
+# Learning loop
+for episode in range(episodes):
+    sequence = [] # List of states in the episode
+    best_sequence = [] # List of states in the best episode that reach a goal
+    state = env.reset() # Reset the environment
+    done = False
+    outcome.append("Failure")
+    action = 0
+    while not done:
+        best_sequence = best_sequence
+        # because it works
+        next_state, reward, done, info, _ = env.step(action)
+        state = next_state  
+
+        rnd = np.random.random()
+        # Take an action
+        if epsilon > rnd:
+          action = env.action_space.sample()
+
+        else:
+          action = np.argmax(qtable[state])
+
+        sequence.append(action)
+      
+        next_state, reward, done, info, _ = env.step(action)
+
+        # Update Q-table
+        qtable[state, action] = qtable[state, action] + \
+                              alpha * (reward + gamma * np.max(qtable[next_state]) - \
+                              qtable[state, action])
+
+        state = next_state 
+      
+        if reward:
+            outcome[-1] = "Success"  
+            reward_counter = reward_counter + 1
+            if 
+            best_sequence = sequence
+          
+          
+    epsilon = max(epsilon - epsilon_decay, 0)
+    clear_output(wait=True)
+    env.render()
+    time.sleep(1)    
+    print(f'Episode: {episode + 1}')
+    print(f'Sequence: {sequence}')
+    print("Best Sequence:" + str(best_sequence))
+    if reward:
+      print("Is the agent reach the goal?: Yes")
+    else:
+      print("Is the agent reach the goal?: No")
+    print(" ")
+print('Q-table after training:')
+print(qtable)
+print(" ")
+print("Best Sequence: " + str(best_sequence))
+print(" ")
+print("Number of time that the agent reach the goal: " + str(reward_counter))
+# Plot outcomes
+plt.figure(figsize=(3, 1.25))
+plt.xlabel("Run number")
+plt.ylabel("Outcome")
+ax = plt.gca()
+ax.set_facecolor('#efeeea')
+plt.bar(range(len(outcome)), outcome, color="#0A047A", width=0.5)
+plt.show()

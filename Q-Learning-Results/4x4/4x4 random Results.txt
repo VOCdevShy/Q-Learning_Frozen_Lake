@@ -1,0 +1,70 @@
+Results after 10 episodes: 
+Q-table after training:
+[[0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.5625   0.      ]
+ [0.354375 0.875    0.225    0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.       0.      ]
+ [0.       0.       0.5      0.      ]
+ [0.       0.       0.       0.      ]]
+Best Sequence: [3, 0, 3, 3, 2, 1, 1, 2]
+Number of time that the agent reach the goal: 4
+Number of all inputs in 4 sequences:
+-(LEFT): 10 times
+-(DOWN): 11 times
+-(RIGHT): 11 times
+-(UP): 17 times
+-Total inputs: 49
+Episodes where the agent reach the goal: [0, 1, 4, 8]
+Sequence 0: [3, 0, 3, 3, 2, 1, 1, 2] / ['UP', 'LEFT', 'UP', 'UP', 'RIGHT', 'DOWN', 'DOWN', 'RIGHT']
+Sequence 1: [2, 3, 3, 1, 2, 3, 1, 1] / ['RIGHT', 'UP', 'UP', 'DOWN', 'RIGHT', 'UP', 'DOWN', 'DOWN']
+Sequence 4: [3, 0, 2, 3, 3, 3, 1, 2, 3, 1, 2, 1] / ['UP', 'LEFT', 'RIGHT', 'UP', 'UP', 'UP', 'DOWN', 'RIGHT', 'UP', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 8: [0, 1, 0, 3, 2, 3, 0, 0, 2, 0, 3, 3, 0, 0, 3, 3, 0, 2, 1, 2, 1] / ['LEFT', 'DOWN', 'LEFT', 'UP', 'RIGHT', 'UP', 'LEFT', 'LEFT', 'RIGHT', 'LEFT', 'UP', 'UP', 'LEFT', 'LEFT', 'UP', 'UP', 'LEFT', 'RIGHT', 'DOWN', 'RIGHT', 'DOWN']
+Success rate = 40.0%
+
+Results after 100 episodes: 
+Q-table after training:
+[[0.09831598 0.08211561 0.110248   0.09909987]
+ [0.09534258 0.         0.37715537 0.10629021]
+ [0.10927375 0.51337877 0.09291223 0.26345339]
+ [0.17601696 0.         0.13105802 0.10194886]
+ [0.05886653 0.         0.         0.0964432 ]
+ [0.         0.         0.         0.        ]
+ [0.         0.64388672 0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.70677246 0.        ]
+ [0.         0.77871094 0.83583984 0.12814453]
+ [0.71151855 0.96875    0.73828125 0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.         0.         0.        ]
+ [0.         0.5625     0.9375     0.64665527]
+ [0.         0.         0.         0.        ]]
+Best Sequence: [0, 2, 1, 1, 2]
+Number of time that the agent reach the goal: 9
+Number of all inputs in 9 sequences:
+-0(LEFT): 16 times
+-1(DOWN): 24 times
+-2(RIGHT): 30 times
+-3(UP): 20 times
+-Total inputs: 90
+Episodes where the agent reach the goal: [9, 34, 61, 66, 72, 82, 85, 88, 90]
+Sequence 9: [3, 0, 2, 0, 2, 1, 2, 1] / ['UP', 'LEFT', 'RIGHT', 'LEFT', 'RIGHT', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 34: [0, 2, 1, 1, 2] / ['LEFT', 'RIGHT', 'DOWN', 'DOWN', 'RIGHT']
+Sequence 61: [3, 3, 2, 1, 2, 2, 2, 2, 0, 3, 0, 2, 1, 3, 0, 2, 1, 1, 2] / ['UP', 'UP', 'RIGHT', 'DOWN', 'RIGHT', 'RIGHT', 'RIGHT', 'RIGHT', 'LEFT', 'UP', 'LEFT', 'RIGHT', 'DOWN', 'UP', 'LEFT', 'RIGHT', 'DOWN', 'DOWN', 'RIGHT']
+Sequence 66: [3, 3, 3, 0, 3, 2, 1, 3, 3, 1, 2, 1] / ['UP', 'UP', 'UP', 'LEFT', 'UP', 'RIGHT', 'DOWN', 'UP', 'UP', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 72: [3, 2, 3, 3, 1, 2, 1] / ['UP', 'RIGHT', 'UP', 'UP', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 82: [2, 1, 3, 1, 1, 1, 2] / ['RIGHT', 'DOWN', 'UP', 'DOWN', 'DOWN', 'DOWN', 'RIGHT']
+Sequence 85: [2, 3, 2, 0, 3, 1, 2, 1] / ['RIGHT', 'UP', 'RIGHT', 'LEFT', 'UP', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 88: [2, 0, 2, 3, 0, 2, 0, 0, 2, 3, 0, 0, 2, 1, 2, 1] / ['RIGHT', 'LEFT', 'RIGHT', 'UP', 'LEFT', 'RIGHT', 'LEFT', 'LEFT', 'RIGHT', 'UP', 'LEFT', 'LEFT', 'RIGHT', 'DOWN', 'RIGHT', 'DOWN']
+Sequence 90: [0, 0, 2, 1, 1, 3, 1, 2] / ['LEFT', 'LEFT', 'RIGHT', 'DOWN', 'DOWN', 'UP', 'DOWN', 'RIGHT']
+Success rate = 9.0%

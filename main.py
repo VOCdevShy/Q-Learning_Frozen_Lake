@@ -23,11 +23,21 @@ env = gym.make('FrozenLake-v1', desc=[
 render_mode="human", is_slippery=False)
 
 # Hyperparameters
-episodes = 100 # Total of episodes
+#episodes = 100 # Total of episodes
+# Handle ValueError exception for float conversion of input
+try:
+    episodes_value = float(input("Enter the number of episodes for this training session: "))
+    if episodes_value > 0:
+      episodes = episodes_value
+    else:
+        print("Please enter a positive number:")
+except ValueError:
+    print("Please enter a number:")
+
 alpha = 0.5  # Learning Rate
 gamma = 0.9  # Discount factor
 epsilon = 1.0  # Amount of randomness in the action selection
-epsilon_decay = 0.01 # Fixed amount to decrease
+epsilon_decay = 1/int(episodes) # Fixed amount to decrease
 
 # Datas
 nb_success = 0 # Number of success
@@ -57,12 +67,13 @@ action_words = {
 #Q-tbale calculation
 qtable = np.zeros((env.observation_space.n, env.action_space.n))
 # show the Q-table
+print(" ")
 print('Q-table before training: ')
 print(qtable)
 print(' ')
 
 # Learning loop
-for episode in range(episodes):
+for episode in range(int(episodes)):
     sequence = [] # List of states in the episode
     state = env.reset() # Reset the environment
     done = False
@@ -192,6 +203,7 @@ if test == "Y":
     print(" ")
     print("Test of the updated Q-Table")
     #re-initialize the data
+    episodes = 100
     best_sequence = [] 
     longest_sequence = []
     longest_best_sequence = []
@@ -202,7 +214,7 @@ if test == "Y":
     reward_sequence = []
     nb_success = 0
     epsilon = 1.0 # same it doesn't used but we nerver know
-    for episode in range(100):
+    for episode in range(episodes):
         sequence = [] # List of states in the episode
         state = env.reset() # Reset the environment
         done = False
@@ -269,7 +281,7 @@ if test == "Y":
         print(" ")
 
     # Results of the Q-table after training and a test without update
-    print("Results after " + str(episodes) + " episodes: ")
+    print("Results after " + str(int(episodes)) + " episodes: ")
     print(" ")
     print(qtable)
     print(" ")
@@ -299,15 +311,15 @@ if test == "Y":
       sequence_words = [action_words[action] for action in sequence]  # Convert actions input number into input words
       print(f"Sequence {episode_num}: {sequence} / {sequence_words}")
     print(" ")
-    print (f"Success rate = {(nb_success/episodes)*100}%")
+    print (f"Success rate = {(nb_success/int(episodes))*100}%")
     #Success rate of the update of the Q-table
-    if (nb_success/episodes)*100 == 100 :
+    if (nb_success/int(episodes))*100 == 100 :
       print(" ")
       print("The Update of the Q-Table is PERFECT!")
-    if 80 <= (nb_success/episodes)*100 <= 99 :
+    if 80 <= (nb_success/int(episodes))*100 <= 99 :
       print(" ")
       print("The Update of the Q-Table is a great success!")
-    if 50 <= (nb_success/episodes)*100 <= 79:
+    if 50 <= (nb_success/int(episodes))*100 <= 79:
       print(" ")
       print("The Update of the Q-Table is successful!")
     if 33 <= (nb_success/episodes)*100 <= 49:

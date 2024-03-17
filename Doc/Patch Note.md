@@ -29,10 +29,9 @@ Version 1.2.1 (minor update) date: 14/03/2024 at: 5:50 p.m (CET(UTC+1)):
 
 Version 1.2.2 (minor update) date: 17/03/2024 at: 10:35 a.m (CET(UTC+1)):
 - Upadate Gym package pass to 1.0.0 alpha version
-- Bug/Problem fix (listed):
+- Bug/Problem fix (listed) (For more informations about the Bugs/Problems checks the "Bug list.md"):
   - Problem 1
   - Problem 2
   - Problem 3
   - Problem 5
   - Problem 7
-(For more informations about the Bugs/Problems checks the "Bugs/Problems list.md")

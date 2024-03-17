@@ -27,7 +27,7 @@ Version 1.2.1 (minor update) date: 14/03/2024 at: 5:50 p.m (CET(UTC+1)):
 - Bug fix(not listed)
   - Q-Table training sucess rate calculation
 
-Version 1.2.2 (minor update) date: 1X/03/2024 at: X:XX p.m (CET(UTC+1)):
+Version 1.2.2 (minor update) date: 17/03/2024 at: 10:35 a.m (CET(UTC+1)):
 - Upadate Gym package pass to 1.0.0 alpha version
 - Bug/Problem fix (listed):
   - Problem 1

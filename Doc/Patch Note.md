@@ -26,3 +26,13 @@ Version 1.2.1 (minor update) date: 14/03/2024 at: 5:50 p.m (CET(UTC+1)):
 - Input value of epsilon in the console
 - Bug fix(not listed)
   - Q-Table training sucess rate calculation
+
+Version 1.2.2 (minor update) date: 1X/03/2024 at: X:XX p.m (CET(UTC+1)):
+- Upadate Gym package pass to 1.0.0 alpha version
+- Bug/Problem fix (listed):
+  - Problem 1
+  - Problem 2
+  - Problem 3
+  - Problem 5
+  - Problem 7
+(For more informations about the Bugs/Problems checks the "Bugs/Problems list.md")

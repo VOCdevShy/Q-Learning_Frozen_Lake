@@ -18,11 +18,11 @@ This is the bug list. In this files, all the bug of the program is detailed.
 5- The agent might be doing 2 actions by input and not only 1? (link to problem 1, 2, 3) (Fix)
   - explication: Add `time.sleep(0.7)` line 84 + delete of `action = env.action_space.sample()` before the while not done
 
-6- The agent is doing the action 0 (left) to much time when epsilon < Q-Table (Not fix)
-  - explication:
+6- The agent is doing the action 0 (left) to much time when epsilon < Q-Table (Fix)
+  - explication: It is because np.argmax(qtable[state]) return [0. 0. 0. 0.] and those values are = 0 so this first action it take is the first one (LEFT) so to correct it we modified the code to `if np.argmax(qtable[state] == 0: action = env.render.sample()`.
 
 7- Teleportation of the agent on a case like he is doing two actions in one and this appear in one action in the sequence (Link to problem 3, 5) (Fix)
   - explication: Add `time.sleep(0.7)` line 84 + delete of `action = env.action_space.sample()` before the while not done
 
 8- When the test of the Q-Table is going it is possible for the agent to have a problem of going left and right infinitly on a case (Not fix)
-  - explication:
+  - explication: It is because np.argmax(qtable[state]) return [0. 0. 0. 0.] and those values are = 0 so this first action it take is the first one (LEFT) so to correct it we modified the code to `if np.argmax(qtable[state] == 0: action = env.render.sample()`.

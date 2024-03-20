@@ -16,12 +16,14 @@ plt.rcParams['figure.dpi'] = 300
 plt.rcParams.update({'font.size': 17})
 
 # Create the game environment
-
-env = gym.make('FrozenLake-v1',
-               desc=["SFFF", "FHFH", "FFFH", "HFFG"],
-               map_name="4x4",
-               render_mode="human",
-               is_slippery=False)
+env = gym.make('FrozenLake-v1', desc=[
+  "SFFF",
+  "FHFH",
+  "FFFH",
+  "HFFG"
+           ],
+map_name="4x4",
+render_mode="human", is_slippery=False)
 
 # Hyperparameters
 #episodes = 100 # Total of episodes
@@ -33,9 +35,18 @@ try:
     episodes = episodes_value
   else:
     print("Please enter a positive number:")
+    episodes_value = float(
+      input("Enter the number of episodes for this training session: "))
 except ValueError:
   print("Please enter a number:")
-
+  episodes_value = float(
+      input("Enter the number of episodes for this training session: "))
+  if episodes_value > 0:
+    episodes = episodes_value
+  else:
+    print("Please enter a positive number:")
+    episodes_value = float(
+      input("Enter the number of episodes for this training session: "))
 alpha = 0.5  # Learning Rate
 gamma = 0.9  # Discount factor
 epsilon = 1.0  # Amount of randomness in the action selection
@@ -56,7 +67,7 @@ reward_counter = 0  # number of time that the agent obtain the reward
 reward_episode = []  # List of the episode that the agent obtain the reward
 reward_sequence = [
 ]  # List of the states in the episodes that the agent obtain the reward
-recurent_sequence = 0  # Number of the episodes that the agent done the same sequence to reach the goal with the best sequence
+recurent_sequence = 1  # Number of the episodes that the agent done the same sequence to reach the goal with the best sequence (by defalt for the first time we set it at one time)
 total_actions = 0  # Total number of actions
 
 # Action detailed
@@ -78,26 +89,29 @@ print(' ')
 for episode in range(int(episodes)):
   sequence = []  # List of states in the episode
   state = env.reset()  # Reset the environment
+  state = 0
   done = False
   outcome.append("Failure")
-  while not done:    
+  while not done:
     time.sleep(0.7)
     rnd = np.random.random()
-    # Take an action
-    if rnd < epsilon:
-      action = env.action_space.sample()
-    next_state, reward, done, info, _ = env.step(action)
-    state = next_state
-    if rnd > epsilon:
-      action = np.argmax(qtable[state])
+    ## Take an action
+    if epsilon > rnd:
+      action = env.action_space.sample()  # Random exploration
+    elif epsilon < rnd and state == next_state:
+      if np.argmax(qtable[state, action]) == 0:
+        action = env.action_space.sample()
+      else:
+        action = np.argmax(qtable[state])  # Exploit Q-table
     sequence.append(action)
 
+
+    next_state, reward, done, info, _ = env.step(action)
     # Update Q-table
     qtable[state, action] = qtable[state, action] + \
-                          alpha * (reward + gamma * np.max(qtable[next_state]) - \
-                          qtable[state, action])   
-
-    nb_success += reward
+                        alpha * (reward + gamma * np.max(qtable[next_state, :]) - \
+                        qtable[state, action])
+    state = next_state
     if not longest_sequence:
       longest_sequence = sequence
     elif len(sequence) > len(longest_sequence):
@@ -111,7 +125,10 @@ for episode in range(int(episodes)):
 
     if reward:
       outcome[-1] = "Success"
-      reward_counter = reward_counter + 1
+      reward_counter += 1
+      nb_success += 1
+      reward_episode.append(episode)
+      reward_sequence.append(sequence)
       if not best_sequence:
         best_sequence = sequence
       elif len(sequence) < len(best_sequence):
@@ -121,8 +138,7 @@ for episode in range(int(episodes)):
         longest_best_sequence = sequence
       elif len(sequence) > len(longest_best_sequence):
         longest_best_sequence = sequence
-        reward_episode.append(episode)
-        reward_sequence.append(sequence)
+        
         if best_sequence == sequence:
           recurent_sequence = recurent_sequence + 1
 
@@ -142,9 +158,11 @@ for episode in range(int(episodes)):
   else:
     print("Is the agent reach the goal?: No")
   print(" ")
-
+if episode == episodes:
+  if best_sequence == []:
+    recurent_sequence = 0
 # Results
-print("Results after " + str(episodes) + " episodes: ")
+print("Results after " + str(episodes) + " training's episodes: ")
 print(" ")
 print('Q-table after training:')
 print(qtable)
@@ -181,7 +199,7 @@ print(" ")
 test = input("Do you want to try your Q-Table? Y/N: ")
 print(" ")
 
-if test == "N":
+if test == "n":
   print("  ")
   plt.figure(figsize=(3, 1.25))
   plt.xlabel("Run number")
@@ -192,9 +210,10 @@ if test == "N":
   plt.show()
 
 # Loop for the test of the updated Q-Table
-if test == "Y":
+if test == "y":
   print(" ")
   print("Test of the updated Q-Table")
+  print(" ")
   #re-initialize the data
   episodes = 100
   best_sequence = []
@@ -212,18 +231,22 @@ if test == "Y":
     state = env.reset()  # Reset the environment
     done = False
     outcome.append("Failure")
+    state = 0
     while not done:
       time.sleep(0.7)
       # Choose the action with the highest value in the current state
       if np.max(qtable[state]) < 0:
         action = env.action_space.sample()
+      # If there's no best action (only zeros), take a random one
+      if np.max(qtable[state]) > 0:
+        if np.argmax(qtable[state]) == 0:
+          action = env.action_space.sample()
+        else:
+          action = np.argmax(qtable[state])
+      sequence.append(action)
+
       next_state, reward, done, info, _ = env.step(action)
       state = next_state
-    # If there's no best action (only zeros), take a random one
-      if np.max(qtable[state]) > 0:
-        action = np.argmax(qtable[state])
-      sequence.append(action)
-      
       nb_success += reward
 
       if not longest_sequence:
@@ -251,6 +274,8 @@ if test == "Y":
           longest_best_sequence = sequence
           if best_sequence == sequence:
             recurent_sequence = recurent_sequence + 1
+      if best_sequence == []:
+        recurent_sequence = 0
 
     epsilon = max(epsilon - epsilon_decay, 0)
     clear_output(wait=True)
@@ -268,7 +293,7 @@ if test == "Y":
     print(" ")
 
   # Results of the Q-table after training and a test without update
-  print("Results after " + str(int(episodes)) + " episodes: ")
+  print("Results after " + str(int(episodes)) + " of test's episodes: ")
   print(" ")
   print(qtable)
   print(" ")
@@ -320,10 +345,10 @@ if test == "Y":
     print(" ")
     print("The Update of the Q-Table is not good at all.")
 
-elif test != "Y" "N":
+elif test != "y" "n":
   print(" ")
-  print("Invalid answer please type Y or N")
-  test = input("Do you want to try your Q-Table? Y/N: ")
+  print("Invalid answer please type y or n")
+  test = input("Do you want to try your Q-Table? y/n: ")
 
 # Plot outcomes
 plt.figure(figsize=(3, 1.25))

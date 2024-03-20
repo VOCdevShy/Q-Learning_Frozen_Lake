@@ -35,3 +35,9 @@ Version 1.2.2 (minor update) date: 17/03/2024 at: 10:35 a.m (CET(UTC+1)):
   - Problem 3
   - Problem 5
   - Problem 7
+
+Version 1.2.3 (minor update) date: 20/03/2024 at: 5:55 p.m (CET(UTC+1)):
+- Adding an example of Training + test results (Check the 4x4 "Results.txt" file in the "4x4" folder in the "Q-Learning-Results" folder)
+- Bug/Problem fix (listed) (For more informations about the Bugs/Problems checks the "Bug list.md"):
+  - Problem 6
+  - Problem 8

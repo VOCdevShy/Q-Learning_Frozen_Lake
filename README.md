@@ -8,3 +8,17 @@ The list of predefined maps are in the map files in the tools folder. Here you c
 If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand what to do in the code: https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741
 
 Do your own test by moving values if you want!
+
+For those who are interested by the calculation of the Q-Table here is an explacation:
+
+`qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])`
+
+- `qtable[state, action]`: This refers to the current value of action 'action' in state 'state' of the Q-table. This is the value we will update.
+
+- `alpha`: This is the learning rate. It controls the extent to which new information will be integrated into the old values of the Q-table. A high value means that new information will have a greater impact on existing values, while a low value means they will have a lesser impact.
+
+- `reward`: This is the immediate reward obtained after taking action 'action' in state 'state'. This reward can be positive, negative, or zero.
+
+- `gamma`: This is the discount factor. It represents the importance of future rewards compared to immediate rewards. A gamma close to 1 gives great importance to future rewards, while a gamma close to 0 gives similar importance to all rewards, whether immediate or future.
+
+- `np.max(qtable[next_state, :])`: This is the maximum value among all possible actions in the next state (next_state). This represents the best estimate of the future value that the agent can obtain from the next state.

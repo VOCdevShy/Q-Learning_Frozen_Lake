@@ -9,7 +9,7 @@ If you want more information about Q-Learning and the Frozen Lake game, please r
 
 Do your own test by moving values if you want!
 
-For those who are interested by the calculation of the Q-Table here is an explacation:
+For those who are interested by the calculation of the Q-Table here is an explication:
 
 `qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])`
 

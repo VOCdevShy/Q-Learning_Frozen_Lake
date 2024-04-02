@@ -22,7 +22,7 @@ Version 1.2.0 (major update) date: 03/03/2024 at: 2:20 p.m (CET(UTC+1)):
   - Correction of the launch of the test of the updated Q-Table
 
 Version 1.2.1 (minor update) date: 14/03/2024 at: 5:50 p.m (CET(UTC+1)):
-- Calculation of espsilon decay (calcul detail: 1/episodes)
+- Calculation of espsilon decay (calcul detail: `1/episodes`)
 - Input value of epsilon in the console
 - Bug fix(not listed)
   - Q-Table training sucess rate calculation

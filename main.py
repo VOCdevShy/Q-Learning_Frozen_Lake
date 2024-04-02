@@ -1,7 +1,7 @@
 import time
 import warnings
-
 import gym
+from gym.envs.toy_text.frozen_lake import generate_random_map # To generate a random map if you want
 import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import clear_output
@@ -139,8 +139,8 @@ for episode in range(int(episodes)):
       elif len(sequence) > len(longest_best_sequence):
         longest_best_sequence = sequence
         
-        if best_sequence == sequence:
-          recurent_sequence = recurent_sequence + 1
+      if best_sequence == sequence:
+        recurent_sequence = recurent_sequence + 1
 
   epsilon = max(epsilon - epsilon_decay, 0)
   clear_output(wait=True)
@@ -200,7 +200,6 @@ test = input("Do you want to try your Q-Table? Y/N: ")
 print(" ")
 
 if test == "n":
-  print("  ")
   plt.figure(figsize=(3, 1.25))
   plt.xlabel("Run number")
   plt.ylabel("Outcome")
@@ -211,7 +210,6 @@ if test == "n":
 
 # Loop for the test of the updated Q-Table
 if test == "y":
-  print(" ")
   print("Test of the updated Q-Table")
   print(" ")
   #re-initialize the data
@@ -239,10 +237,9 @@ if test == "y":
         action = env.action_space.sample()
       # If there's no best action (only zeros), take a random one
       if np.max(qtable[state]) > 0:
-        if np.argmax(qtable[state]) == 0:
-          action = env.action_space.sample()
-        else:
           action = np.argmax(qtable[state])
+      if np.argmax(qtable[state]) == 0:
+        action = env.action_space.sample()
       sequence.append(action)
 
       next_state, reward, done, info, _ = env.step(action)
@@ -263,6 +260,8 @@ if test == "y":
       if reward:
         outcome[-1] = "Success"
         reward_counter = reward_counter + 1
+        reward_episode.append(episode)
+        reward_sequence.append(sequence)
         if not best_sequence:
           best_sequence = sequence
         elif len(sequence) < len(best_sequence):
@@ -272,8 +271,8 @@ if test == "y":
           longest_best_sequence = sequence
         elif len(sequence) > len(longest_best_sequence):
           longest_best_sequence = sequence
-          if best_sequence == sequence:
-            recurent_sequence = recurent_sequence + 1
+        if best_sequence == sequence:
+          recurent_sequence = recurent_sequence + 1
       if best_sequence == []:
         recurent_sequence = 0
 
@@ -328,7 +327,7 @@ if test == "y":
   #Success rate of the update of the Q-table
   if (nb_success / int(episodes)) * 100 == 100:
     print(" ")
-    print("The Update of the Q-Table is PERFECT!")
+    print("The Update of the Q-Table is PERFECT to reach the goal!")
   if 80 <= (nb_success / int(episodes)) * 100 <= 99:
     print(" ")
     print("The Update of the Q-Table is a great success!")

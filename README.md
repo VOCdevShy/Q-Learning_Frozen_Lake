@@ -1,7 +1,7 @@
 This project has been done with Gymnasium from Farama-Foundation that help you in the AI Reinforcement Learining and the Q-Learning domains.
 
 This project has been made in a studying context so it could have some errors in the code (You have a list in the "Bug List" file in the doc folder).
-If you want to fix an error please fix it or detailed how you solve it!
+If you see a problem, a bug or an error in the code, please open an issue.
 
 The list of predefined maps are in the map files in the tools folder. Here you can find a predefined map for the 2x2, 4x4, 8x8 and 16x16 maps, but also random maps generation for the 2x2, 4x4, 8x8 and 16x16.
 

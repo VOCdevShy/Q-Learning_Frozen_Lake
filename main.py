@@ -281,8 +281,7 @@ if test == "y":
     env.render()
     time.sleep(1)
     print(f'Episode: {episode + 1}')
-    sequence_words = [action_words[action] for action in sequence
-                      ]  # Convert actions input number into input words
+    sequence_words = [action_words[action] for action in sequence]  # Convert actions input number into input words
     print(f'Sequence: {sequence} / {sequence_words}')
     print(f'Best Sequence: {best_sequence}')
     if reward:

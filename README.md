@@ -1,3 +1,4 @@
+# WELCOME ON THE ULTRA-DETAILED DATA VERSION OF Q-LEARNING FROZEN LAKE 
 This project has been done with Gymnasium from Farama-Foundation that help you in the AI Reinforcement Learining and the Q-Learning domains.
 
 This project has been made in a studying context so it could have some errors in the code (You have a list in the "Bug List" file in the doc folder).
@@ -7,9 +8,11 @@ The list of predefined maps are in the map files in the tools folder. Here you c
 
 If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand what to do in the code: https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741
 
-For those who are interested by the calculation of the Q-Table here is an explication:
+### For those who are interested by the calculation of the Q-Table here is an explication (Hope it helps you to understand the Q-Learning):
 
-`qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])`
+ ```
+qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])
+```
 
 - `qtable[state, action]`: This refers to the current value of action 'action' in state 'state' of the Q-table. This is the value we will update.
 

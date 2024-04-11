@@ -1,4 +1,4 @@
-## This is the bug list. In this files, all the bugs/problems of the program are detailed. (If you know how to fix it please, open an issue)
+<h2>This is the bug list. In this files, all the bugs/problems of the program are detailed. <br>(If you know how to fix a bug or if you found one, please open an issue)</br></h2> 
 
 1. Sequence lag/Sequence recording lag (Link to problem 2 and 3) (Fix)
     - explication: Add `time.sleep(0.7)` line 84 + delete of `action = env.action_space.sample()` before the while not done

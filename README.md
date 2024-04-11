@@ -6,8 +6,6 @@
 <br>(If you want to see what is gymnasium <a href="https://github.com/Farama-Foundation/Gymnasium">click here</a> to go on the Github page of Gymnasium)</br>
 <br>If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
 </br></h4>
-This project has been made in a studying context so it could have some errors in the code (You have a list in the "Bug List" file in the doc folder).
-If you see a problem, a bug or an error in the code, please open an issue.
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
@@ -19,7 +17,6 @@ Like his name is telling, the project is an ultra-detailed version of the Frozen
 <br>This program allow to train an agent on the Frozen-Lake game in a range of episodes that the user enter at the start of the program. This program use the Exploration X Exploitation method for the training. That means that the agent explore the environment but also use the updated Q-Table to have a better update of the Q-Table at the end.
 <br>The program offers the user the possibility of testing the updated Q-Table obtained by following the training.</br> 
 During the training like during the test, you have a lot of datas that are detailed in the console during the sessions.</br>
-
 
 ## Datas you could obtain:
   - `nb_success`: is use in the formula: `nb_sucess/episodes*100` to calculate the success rate of the training and of the test of the training
@@ -50,8 +47,8 @@ Here you can find a predefined or random generations maps for:
 qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])
 ```
 
-- `qtable[state, action]`: This refers to the current value of action 'action' in state 'state' of the Q-table. This is the value we will update.
+- `qtable[state, action]`: This refers to the current value of action (0, 1, 2, 3 (LEFT, DOWN, RIGHT, UP)) in state (number of the case) of the Q-table. This is the value we will update.
 - `alpha`: This is the learning rate. It controls the extent to which new information will be integrated into the old values of the Q-table. A high value means that new information will have a greater impact on existing values, while a low value means they will have a lesser impact.
-- `reward`: This is the immediate reward obtained after taking action in state . This reward is equals to a postive float.
+- `reward`: This is the immediate reward obtained after taking action in state. This reward is equals to a positive float (1.0).
 - `gamma`: This is the discount factor. It represents the importance of future rewards compared to immediate rewards. A gamma close to 1 gives great importance to future rewards, while a gamma close to 0 gives similar importance to all rewards, whether immediate or future.
 - `np.max(qtable[next_state, :])`: This is the maximum value among all possible actions in the next state (next_state). This represents the best estimate of the future value that the agent can obtain from the next state.

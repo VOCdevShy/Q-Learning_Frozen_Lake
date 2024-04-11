@@ -1,16 +1,52 @@
-# WELCOME ON THE ULTRA-DETAILED DATA VERSION OF Q-LEARNING FROZEN LAKE 
-This project has been done with Gymnasium from Farama-Foundation that help you in the AI Reinforcement Learining and the Q-Learning domains.
+<img src="https://dev.tuny.fr/img/Sans%20titre%20114_20231127093151.png" alt="VOC LOGO" width="250" height="150">
 
-This project has been made in a studying context so it could have some errors in the code (You have a list in the "Bug List" file in the doc folder).
-If you want to fix an error please fix it or detailed how you solve it!
+<h4>This project has been made in a studying context so it could have some errors in the code.
+<br>(You have a list in the "Bug List" file in the doc folder if you're interested to help the project!)</br>
+<br>This project has been done with Gymnasium from Farama-Foundation that is made for the AI Reinforcement Learining and the Q-Learning domains in python.
+<br>(If you want to see what is gymnasium <a href="https://github.com/Farama-Foundation/Gymnasium">click here</a> to go on the Github page of Gymnasium)</br>
+<br>If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
+</br></h4>
 
-The list of predefined maps are in the map files in the tools folder. Here you can find a predefined map for the 2x2, 4x4, 8x8 and 16x16 maps, but also random maps generation for the 2x2, 4x4, 8x8 and 16x16.
+<h1 align="center"> Welcome on one of the most ultra-detailed version of the
+  <br>Frozen-Lake Q-Learning project
+<br>Ver. 1.2.3</br>
+</br></h1>
+  
+Like is name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
 
-If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand what to do in the code: https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741
+## About the program
+Like is name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
+<br>This program allow to train an agent on the Frozen-Lake game in a range of episodes that the user enter at the start of the program. This program use the Exploration X Exploitation method for the training. That means that the agent explore the environment but also use the updated Q-Table to have a better update of the Q-Table at the end.
+<br>The program offers the user the possibility of testing the updated Q-Table obtained by following the training.</br> 
+During the training like during the test, you have a lot of datas that are detailed in the console during the sessions.</br>
 
-### For those who are interested by the calculation of the Q-Table here is an explication (Hope it helps you to understand the Q-Learning):
 
- ```
+## Datas you could obtain:
+  - `nb_success`: is use in the formula: `nb_sucess/episodes*100` to calculate the success rate of the training and of the test of the training
+  - `best_sequence`: List of states in the best (shortest) episode that reach the goal
+  - `longest_sequence`: List of states in the longer episode that doesn't reach the goal
+  - `longest_best_sequence`: List of states in the longest episode that reach the goal
+  - `shortest_sequence`: List of states in the shortest episode that doesn't reach the goal
+    <br>(All the sequence appeared in the input format (0, 1, 2, 3) and the words format (LEFT, DOWN, RIGHT, UP))</br>
+  - `reward_counter`: number of time that the agent obtain the reward
+  - `reward_episode`: List of the episode that the agent obtain the reward
+  - `reward_sequence`: List of the states in the episodes that the agent obtain the reward
+  - `recurent_sequence`: Number of the episodes that the agent done the same sequence to reach the goal with the best sequence
+  - `total_actions`: Total number of actions
+
+## Tools:
+Here you can find a predefined or random generations maps for:
+  - 2x2 map
+  - 4x4 map
+  - 8x8 map
+  - 16x16 map
+<br>(The list of predefined maps and random generations ones are in the map.txt file in the tools folder.)</br>
+
+
+<h3>For those who are interested by the calculation of the Q-Table here is an explication:
+  <br>(Hope it helps you to understand the Q-Learning)</br></h3>
+
+```
 qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])
 ```
 

@@ -6,6 +6,8 @@
 <br>(If you want to see what is gymnasium <a href="https://github.com/Farama-Foundation/Gymnasium">click here</a> to go on the Github page of Gymnasium)</br>
 <br>If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
 </br></h4>
+This project has been made in a studying context so it could have some errors in the code (You have a list in the "Bug List" file in the doc folder).
+If you see a problem, a bug or an error in the code, please open an issue.
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
@@ -13,7 +15,7 @@
 </br></h1>
   
 ## About the program
-Like is name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
+Like his name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
 <br>This program allow to train an agent on the Frozen-Lake game in a range of episodes that the user enter at the start of the program. This program use the Exploration X Exploitation method for the training. That means that the agent explore the environment but also use the updated Q-Table to have a better update of the Q-Table at the end.
 <br>The program offers the user the possibility of testing the updated Q-Table obtained by following the training.</br> 
 During the training like during the test, you have a lot of datas that are detailed in the console during the sessions.</br>

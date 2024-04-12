@@ -10,19 +10,19 @@
 ## Table of content
 - [About][1]
 - [Datas][2]
-  - [Tools][3]
-- [maps][]
+- [Tools][3]
+  - [maps][5]
 - [Q-Table formula][4]
 
 [1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#about-the-program "About"
 [2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#datas-you-could-obtain "Datas"
 [3]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#tools "Tools"
 [4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "formula"
-[5]:  "maps"
+[5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "maps"
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
-<br>Ver. 1.2.4</br>
+<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-124-minor-update-date-12042024-at-500-pm-cetutc1">Ver. 1.2.4</a></br>
 </br></h1>
   
 ## About

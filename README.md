@@ -4,40 +4,54 @@
 <br>(You have a list in the "Bug List" file in the doc folder if you're interested to help the project!)</br>
 <br>This project has been done with Gymnasium from Farama-Foundation that is made for the AI Reinforcement Learining and the Q-Learning domains in python.
 <br>(If you want to see what is gymnasium <a href="https://github.com/Farama-Foundation/Gymnasium">click here</a> to go on the Github page of Gymnasium)</br>
-<br>If you want more information about Q-Learning and the Frozen Lake game, please read the article from medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
+<br>If you want more information about Q-Learning and the Frozen Lake game, you could read the article found on medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
 </br></h4>
+
+## Table of content
+- [About][1]
+- [Datas][2]
+  - [Tools][3]
+- [maps][]
+- [Q-Table formula][4]
+
+[1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#about-the-program "About"
+[2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#datas-you-could-obtain "Datas"
+[3]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#tools "Tools"
+[4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "formula"
+[5]:  "maps"
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
-<br>Ver. 1.2.3</br>
+<br>Ver. 1.2.4</br>
 </br></h1>
   
-## About the program
+## About
 Like his name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
 <br>This program allow to train an agent on the Frozen-Lake game in a range of episodes that the user enter at the start of the program. This program use the Exploration X Exploitation method for the training. That means that the agent explore the environment but also use the updated Q-Table to have a better update of the Q-Table at the end.
 <br>The program offers the user the possibility of testing the updated Q-Table obtained by following the training.</br> 
 During the training like during the test, you have a lot of datas that are detailed in the console during the sessions.</br>
 
-## Datas you could obtain:
-  - `nb_success`: is use in the formula: `nb_sucess/episodes*100` to calculate the success rate of the training and of the test of the training
+## Obtainables datas
+  - `nb_success`: Is use in the formula `nb_sucess/episodes*100` to calculate the success rate of the training and of the test of the training
   - `best_sequence`: List of states in the best (shortest) episode that reach the goal
-  - `longest_sequence`: List of states in the longer episode that doesn't reach the goal
   - `longest_best_sequence`: List of states in the longest episode that reach the goal
+  - `longest_sequence`: List of states in the longer episode that doesn't reach the goal
   - `shortest_sequence`: List of states in the shortest episode that doesn't reach the goal
     <br>(All the sequence appeared in the input format (0, 1, 2, 3) and the words format (LEFT, DOWN, RIGHT, UP))</br>
   - `reward_counter`: number of time that the agent obtain the reward
   - `reward_episode`: List of the episode that the agent obtain the reward
   - `reward_sequence`: List of the states in the episodes that the agent obtain the reward
   - `recurent_sequence`: Number of the episodes that the agent done the same sequence to reach the goal with the best sequence
-  - `total_actions`: Total number of actions
+  - `total_actions`: Total number of actions in the episodes where the agent reach the goal
+  - `action_counts[action_words[action]]`: Number of Action by types of actions (LEFT, DOWN, RIGHT, UP)
 
-## Tools:
-Here you can find a predefined or random generations maps for:
+## Tools
+### Maps
   - 2x2 map
   - 4x4 map
   - 8x8 map
   - 16x16 map
-<br>(The list of predefined maps and random generations ones are in the map.txt file in the tools folder.)</br>
+<br>(The list of predefined maps and random generations ones are in the `map.txt` file in the `tools` folder.)</br>
 
 
 <h3>For those who are interested by the calculation of the Q-Table here is an explication:

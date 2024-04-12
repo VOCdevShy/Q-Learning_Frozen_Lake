@@ -25,9 +25,7 @@ env = gym.make('FrozenLake-v1', desc=[
 map_name="4x4",
 render_mode="human", is_slippery=False)
 
-# Hyperparameters
-#episodes = 100 # Total of episodes
-# Handle ValueError exception for float conversion of input
+# Hyperparameters 
 try:
   episodes_value = float(
       input("Enter the number of episodes for this training session: "))
@@ -55,19 +53,14 @@ epsilon_decay = 1 / int(episodes)  # Fixed amount to decrease
 # Datas
 nb_success = 0  # Number of success
 outcome = []  # List of outcomes to plot
-best_sequence = [
-]  # List of states in the best (shortest) episode that reach the goal
-longest_sequence = [
-]  # List of states in the longer episode that doesn't reach the goal
-longest_best_sequence = [
-]  # List of states in the longest episode that reach the goal
-shortest_sequence = [
-]  # List of states in the shortest episode that doesn't reach the goal
+best_sequence = []  # List of states in the best (shortest) episode that reach the goal
+longest_sequence = []  # List of states in the longer episode that doesn't reach the goal
+longest_best_sequence = []  # List of states in the longest episode that reach the goal
+shortest_sequence = []  # List of states in the shortest episode that doesn't reach the goal
 reward_counter = 0  # number of time that the agent obtain the reward
 reward_episode = []  # List of the episode that the agent obtain the reward
-reward_sequence = [
-]  # List of the states in the episodes that the agent obtain the reward
-recurent_sequence = 1  # Number of the episodes that the agent done the same sequence to reach the goal with the best sequence (by defalt for the first time we set it at one time)
+reward_sequence = []  # List of the states in the episodes that the agent obtain the reward
+recurent_sequence = 0  # Number of the episodes that the agent done the same sequence to reach the goal with the best sequence (by defalt for the first time we set it at one time)
 total_actions = 0  # Total number of actions
 
 # Action detailed
@@ -92,6 +85,7 @@ for episode in range(int(episodes)):
   state = 0
   done = False
   outcome.append("Failure")
+  episode += 1
   while not done:
     time.sleep(0.7)
     rnd = np.random.random()
@@ -146,7 +140,7 @@ for episode in range(int(episodes)):
   clear_output(wait=True)
   env.render()
   time.sleep(1)
-  print(f'Episode: {episode + 1}')
+  print(f'Episode: {episode}')
   sequence_words = [action_words[action] for action in sequence
                     ]  # Convert actions input number into input words
   print(f'Sequence: {sequence} / {sequence_words}')
@@ -158,9 +152,6 @@ for episode in range(int(episodes)):
   else:
     print("Is the agent reach the goal?: No")
   print(" ")
-if episode == episodes:
-  if best_sequence == []:
-    recurent_sequence = 0
 # Results
 print("Results after " + str(episodes) + " training's episodes: ")
 print(" ")
@@ -212,7 +203,7 @@ if test == "n":
 if test == "y":
   print("Test of the updated Q-Table")
   print(" ")
-  #re-initialize the data
+  #reset the datas
   episodes = 100
   best_sequence = []
   longest_sequence = []
@@ -223,13 +214,15 @@ if test == "y":
   reward_episode = []
   reward_sequence = []
   nb_success = 0
-  epsilon = 1.0  # same it doesn't used but we nerver know
+  recurent_sequence = 0
+  total_action = 0
   for episode in range(episodes):
     sequence = []  # List of states in the episode
     state = env.reset()  # Reset the environment
     done = False
     outcome.append("Failure")
     state = 0
+    episode += 1
     while not done:
       time.sleep(0.7)
       # Choose the action with the highest value in the current state
@@ -280,7 +273,7 @@ if test == "y":
     clear_output(wait=True)
     env.render()
     time.sleep(1)
-    print(f'Episode: {episode + 1}')
+    print(f'Episode: {episode}')
     sequence_words = [action_words[action] for action in sequence]  # Convert actions input number into input words
     print(f'Sequence: {sequence} / {sequence_words}')
     print(f'Best Sequence: {best_sequence}')

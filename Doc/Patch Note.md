@@ -1,5 +1,5 @@
 ### Version: 1.0.1 (minor update) date: 29/02/2024 at: 10:20 a.m (CET(UTC+1)):
-- Half resolved the bug n°4 (Check the "Bug List.md files" to see the explication)
+- Half resolved the bug n°4 (Check the `Bug List.md files` to see the explication of te fix)
  
 ## Version: 1.1.0 (major update) date: 01/03/2024 at: 09:53 a.m (CET(UTC+1)):
 - Implementation of the test of the Q-Table after training. For a 100 episodes you can try your Q-Table to see if the update is good or not.
@@ -49,3 +49,11 @@
 - Bug/Problem fix (listed) (For more informations about the Bugs/Problems checks the `Bug list.md` file in the `doc` folder):
   - n°6
   - n°8
+
+### Version 1.2.4 (minor update) date: 12/04/2024 at: 5:00 p.m (CET(UTC+1)):
+- Re-layout of the `README.md`, `Bug List.md`, `Patch Note.md` files
+- Replacing by an another example the example of final result for the 4x4 map in the `4x4 Results.txt` + adding a picture of the outcomes of the training + test in the `4x4` folder in the `Q-Learning-Results` folder
+- Bug/Problem fix (listed) (For more informations about the Bugs/Problems checks the `Bug list.md` file in the `doc` folder):
+  - n°9
+- Bug/Problem fix (not listed):
+  - `total_actions` are all actions of the training + test part. To change this we reset the value at the start of the test part.

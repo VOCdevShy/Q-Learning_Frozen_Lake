@@ -1,69 +1,152 @@
-#EXAMPLE OF TRAINING + TEST:
+# This is an example of a training + a test of a Q-Table for a 100 episodes:
 
 Results after 100 training's episodes: 
 Q-table after training:
-[[0.05210456 0.06659967 0.04938211 0.04116101]
- [0.05543108 0.         0.0200396  0.04505324]
- [0.04108882 0.002975   0.         0.02179552]
+[[0.15831711 0.25917878 0.11922523 0.15359299]
+ [0.15965656 0.         0.02154766 0.09100679]
+ [0.02719321 0.         0.00526721 0.0120596 ]
+ [0.00709388 0.         0.00526721 0.        ]
+ [0.25900676 0.31536319 0.         0.18784653]
  [0.         0.         0.         0.        ]
- [0.06663747 0.0770469  0.         0.05011528]
+ [0.         0.2278125  0.         0.        ]
  [0.         0.         0.         0.        ]
- [0.         0.2025     0.         0.0178359 ]
- [0.         0.         0.         0.        ]
- [0.03588047 0.         0.08827734 0.04296045]
- [0.03075469 0.         0.10125    0.        ]
- [0.         0.45       0.         0.091125  ]
+ [0.18020325 0.         0.37108521 0.23696614]
+ [0.17203403 0.03075469 0.43664063 0.        ]
+ [0.         0.590625   0.         0.10251563]
  [0.         0.         0.         0.        ]
  [0.         0.         0.         0.        ]
- [0.         0.         0.39375    0.        ]
- [0.         0.3375     0.9375     0.        ]
+ [0.         0.03075469 0.3375     0.06834375]
+ [0.         0.3375     0.875      0.10125   ]
  [0.         0.         0.         0.        ]]
-Shortest Sequence: [1, 1, 1]
-Longest Sequence: [3, 2, 0, 3, 3, 1, 3, 1, 3, 3, 3, 0, 0, 3, 0, 3, 2, 3, 0, 0, 2, 3, 2, 1, 0]
-Best Sequence: [3, 1, 1, 2, 2, 1, 1, 1, 2] x1
-Longest Best Sequence: [2, 0, 1, 3, 3, 3, 0, 3, 0, 1, 1, 2, 2, 1, 2]
-Number of time that the agent reach the goal: 4
-Number of all inputs in 4 sequences:
--(LEFT): 9 times
--(DOWN): 20 times
--(RIGHT): 13 times
--(UP): 7 times
--Total inputs: 49
-Episodes where the agent reach the goal: [35, 54, 66, 95]
-Sequence 35: [1, 3, 1, 1, 0, 2, 1, 1, 1, 1, 2, 2] / ['DOWN', 'UP', 'DOWN', 'DOWN', 'LEFT', 'RIGHT', 'DOWN', 'DOWN', 'DOWN', 'DOWN', 'RIGHT', 'RIGHT']
-Sequence 54: [3, 1, 1, 2, 2, 1, 1, 1, 2] / ['UP', 'DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'DOWN', 'DOWN', 'RIGHT']
-Sequence 66: [2, 0, 1, 3, 3, 3, 0, 3, 0, 1, 1, 2, 2, 1, 2] / ['RIGHT', 'LEFT', 'DOWN', 'UP', 'UP', 'UP', 'LEFT', 'UP', 'LEFT', 'DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
-Sequence 95: [1, 3, 0, 1, 0, 0, 0, 0, 1, 2, 1, 2, 2] / ['DOWN', 'UP', 'LEFT', 'DOWN', 'LEFT', 'LEFT', 'LEFT', 'LEFT', 'DOWN', 'RIGHT', 'DOWN', 'RIGHT', 'RIGHT']
-Success rate = 4.0%
+Shortest Sequence: [2, 1]
+Longest Sequence: [3, 0, 1, 0, 3, 1, 3, 3, 3, 2, 3, 3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 1]
+Best Sequence: [1, 1, 2, 1, 1, 2, 2] x3
+Longest Best Sequence: [1, 1, 2, 1, 3, 2, 0, 2, 0, 2, 1, 2]
+Number of time that the agent reach the goal: 3
+Number of all inputs in 3 sequences:
+-(LEFT): 2 times
+-(DOWN): 14 times
+-(RIGHT): 11 times
+-(UP): 2 times
+-Total inputs: 29 
+Episodes where the agent reach the goal: [8, 26, 98] 
+Sequence 8: [1, 1, 2, 1, 3, 2, 0, 2, 0, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'DOWN', 'UP', 'RIGHT', 'LEFT', 'RIGHT', 'LEFT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 26: [1, 1, 2, 2, 1, 1, 3, 1, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'DOWN', 'UP', 'DOWN', 'DOWN', 'RIGHT']
+Sequence 98: [1, 1, 2, 1, 1, 2, 2] / ['DOWN', 'DOWN', 'RIGHT', 'DOWN', 'DOWN', 'RIGHT', 'RIGHT']
+Success rate = 3.0%
 
 Results after 100 of test's episodes: 
-[[0.05210456 0.06659967 0.04938211 0.04116101]
- [0.05543108 0.         0.0200396  0.04505324]
- [0.04108882 0.002975   0.         0.02179552]
- [0.         0.         0.         0.        ]
- [0.06663747 0.0770469  0.         0.05011528]
- [0.         0.         0.         0.        ]
- [0.         0.2025     0.         0.0178359 ]
- [0.         0.         0.         0.        ]
- [0.03588047 0.         0.08827734 0.04296045]
- [0.03075469 0.         0.10125    0.        ]
- [0.         0.45       0.         0.091125  ]
- [0.         0.         0.         0.        ]
- [0.         0.         0.         0.        ]
- [0.         0.         0.39375    0.        ]
- [0.         0.3375     0.9375     0.        ]
- [0.         0.         0.         0.        ]]
 Shortest Sequence: [1, 1, 2, 2, 1, 2]
 Longest Sequence: [1, 1, 2, 2, 1, 2]
-Best Sequence: [1, 1, 2, 2, 1, 2] x0
+Best Sequence: [1, 1, 2, 2, 1, 2] x100
 Longest Best Sequence: [1, 1, 2, 2, 1, 2]
 Number of time that the agent reach the goal: 100
 Number of all inputs in 100 sequences:
 -(LEFT): 0 times
--(DOWN): 0 times
--(RIGHT): 0 times
+-(DOWN): 300 times
+-(RIGHT): 300 times
 -(UP): 0 times
--Total inputs: 49
-Episodes where the agent reach the goal: []
+-Total inputs: 600
+Episodes where the agent reach the goal: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+Sequence 1: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 2: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 3: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 4: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 5: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 6: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 7: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 8: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 9: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 10: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 11: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 12: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 13: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 14: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 15: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 16: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 17: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 18: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 19: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 20: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 21: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 22: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 23: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 24: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 25: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 26: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 27: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 28: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 29: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 30: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 31: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 32: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 33: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 34: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 35: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 36: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 37: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 38: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 39: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 40: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 41: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 42: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 43: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 44: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 45: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 46: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 47: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 48: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 49: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 50: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 51: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 52: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 53: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 54: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 55: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 56: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 57: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 58: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 59: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 60: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 61: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 62: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 63: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 64: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 65: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 66: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 67: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 68: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 69: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 70: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 71: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 72: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 73: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 74: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 75: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 76: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 77: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 78: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 79: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 80: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 81: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 82: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 83: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 84: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 85: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 86: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 87: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 88: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 89: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 90: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 91: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 92: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 93: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 94: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 95: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 96: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 97: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 98: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 99: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
+Sequence 100: [1, 1, 2, 2, 1, 2] / ['DOWN', 'DOWN', 'RIGHT', 'RIGHT', 'DOWN', 'RIGHT']
 Success rate = 100.0%
-The Update of the Q-Table is PERFECT!
+The Update of the Q-Table is PERFECT to reach the goal!

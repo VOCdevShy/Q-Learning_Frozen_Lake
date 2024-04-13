@@ -16,7 +16,7 @@
 [5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-122-minor-update-date-17032024-at-1035-am-cetutc1 "Version 1.2.2"
 [6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-123-minor-update-date-20032024-at-555-pm-cetutc1 "Version 1.2.3"
 [7]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-124-minor-update-date-12042024-at-500-pm-cetutc1 "Version 1.2.4"
-[8]: https "Version 2.0.0"
+[8]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-200-major-update-date-13042024-at-653-pm-cetutc1 "Version 2.0.0"
 
 ### Version: 1.0.1 (minor update) date: 29/02/2024 at: 10:20 a.m (CET(UTC+1)):
 - Half resolved the bug n°4 (Check the `Bug List.md files` to see the explication of te fix)

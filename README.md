@@ -11,7 +11,8 @@
 - [About][1]
 - [Datas][2]
 - [Tools][3]
-  - [maps][5]
+  - [Maps][5]
+  - [Q-Injection][6]
 - [Q-Table formula][4]
 
 [1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#about-the-program "About"
@@ -19,10 +20,11 @@
 [3]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#tools "Tools"
 [4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "formula"
 [5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "maps"
+[6]:  "Q-Injection"
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
-<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-124-minor-update-date-12042024-at-500-pm-cetutc1">Ver. 1.2.4</a></br>
+<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-124-minor-update-date-12042024-at-500-pm-cetutc1">Ver. 2.0.0</a></br>
 </br></h1>
   
 ## About
@@ -52,6 +54,15 @@ During the training like during the test, you have a lot of datas that are detai
   - 8x8 map
   - 16x16 map
 <br>(The list of predefined maps and random generations ones are in the `map.txt` file in the `tools` folder.)</br>
+
+### Q-Injection
+The **Q-Injection** is a functionality that have for goal to test Q-Tables like:
+  - Randomized Q-Table
+  - Trained Q-Table (obtained by a training done by our team)
+  - A start of trained Q-Table (Three Value)
+    
+But also to train them to obtain better results using the Exploration X Exploitation method.
+<br> (_For more information about the Q-Injection read the_ `injection.md` _file in the_ `tools` _folder_)
 
 
 <h3>For those who are interested by the calculation of the Q-Table here is an explication:

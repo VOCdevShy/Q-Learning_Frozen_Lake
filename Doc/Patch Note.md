@@ -1,11 +1,13 @@
 ## Index
-- [Ver. 1.0.1][1]
-- [Ver. 1.1.0][2]
-- [Ver. 1.2.0][3]
-- [Ver. 1.2.1][4]
-- [Ver. 1.2.2][5]
-- [Ver. 1.2.3][6]
-- [Ver. 1.2.4][7]
+- Ver. 1.0.0
+    - [Ver. 1.0.1][1]
+  - [Ver. 1.1.0][2]
+  - [Ver. 1.2.0][3]
+    - [Ver. 1.2.1][4]
+    - [Ver. 1.2.2][5]
+    - [Ver. 1.2.3][6]
+    - [Ver. 1.2.4][7]
+- [Ver. 2.0.0][8]
 
 [1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-101-minor-update-date-29022024-at-1020-am-cetutc1 "Version 1.0.1"
 [2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-110-major-update-date-01032024-at-0953-am-cetutc1 "Version 1.1.0"
@@ -14,15 +16,16 @@
 [5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-122-minor-update-date-17032024-at-1035-am-cetutc1 "Version 1.2.2"
 [6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-123-minor-update-date-20032024-at-555-pm-cetutc1 "Version 1.2.3"
 [7]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-124-minor-update-date-12042024-at-500-pm-cetutc1 "Version 1.2.4"
+[8]: https "Version 2.0.0"
 
 ### Version: 1.0.1 (minor update) date: 29/02/2024 at: 10:20 a.m (CET(UTC+1)):
 - Half resolved the bug n°4 (Check the `Bug List.md files` to see the explication of te fix)
  
-## Version: 1.1.0 (major update) date: 01/03/2024 at: 09:53 a.m (CET(UTC+1)):
+## Version: 1.1.0 (medium update) date: 01/03/2024 at: 09:53 a.m (CET(UTC+1)):
 - Implementation of the test of the Q-Table after training. For a 100 episodes you can try your Q-Table to see if the update is good or not.
 - If the results is upper or equal than 50% it is a good update between 33% and 49% it is not good at it could be, between 25% and 33% that's not a good update as well and less than 25% that's not a good update.
 
-## Version 1.2.0 (major update) date: 03/03/2024 at: 2:20 p.m (CET(UTC+1)):
+## Version 1.2.0 (medium update) date: 03/03/2024 at: 2:20 p.m (CET(UTC+1)):
 - Adding new datas obtention:
   - `longest_sequence`: List of states in the longer episode that doesn't reach the goal
   - `longest_best_sequence`: List of states in the longest episode that reach the goal
@@ -74,3 +77,18 @@
   - n°9
 - Bug/Problem fix (not listed):
   - `total_actions` are all actions of the training + test part. To change this we reset the value at the start of the test part.
+
+# Version 2.0.0 (major update) date: 13/04/2024 at: 6:53 p.m (CET(UTC+1)):
+- **BRAND NEW FUNCTIONALITY: Q-Injection**
+
+The Q-Injection is for the training and/or the test of Q-Table Like:
+
+  - Randomized Q-Table
+  - Trained Q-Table
+  - Little updated Q-Table
+
+These Q-Tables are in the `QInjection.py` file
+<br>(_For more information about check the_ `injection.md` _file in the_ `Tools` _folder_)
+
+-  Bug/Problem found and listed (For more informations about the Bugs/Problems checks the `Bug list.md` in the `doc` folder):
+    -  n°10

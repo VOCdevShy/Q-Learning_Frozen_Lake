@@ -55,3 +55,5 @@
 
 <p> </p>
 
+10. The "graph" of the outcomes doesn't show the outcomes when he is in a condition but only work whith this who is show at the end of the program. (not fix)
+    - Explication of the fix:

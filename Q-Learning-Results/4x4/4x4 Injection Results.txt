@@ -1,0 +1,7 @@
+Randomize Q-Table:
+
+
+Optimized Q-Table:
+
+
+start of trained Q-Table:

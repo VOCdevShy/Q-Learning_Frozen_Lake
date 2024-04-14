@@ -18,13 +18,18 @@ plt.rcParams.update({'font.size': 17})
 
 # Create the game environment
 env = gym.make('FrozenLake-v1', desc=[
-  "SFFF",
-  "FHFH",
-  "FFFH",
-  "HFFG"
-           ],
-map_name="4x4",
-render_mode="human", is_slippery=False)
+                        "SFFFFFFF",
+                        "FFFFFFFF",
+                        "FFFHFFFF",
+                        "FFFFFHFF",
+                        "FFFHFFFF",
+                        "FHHFFFHF",
+                        "FHFFHFHF",
+                        "FFFHFFFG",
+                                    ], 
+                  map_name="8x8",
+               render_mode="human", is_slippery=False)
+map_name = "8x8"
 
 # Hyperparameters 
 try:

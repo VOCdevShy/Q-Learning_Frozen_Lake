@@ -7,6 +7,12 @@
 <br>If you want more information about Q-Learning and the Frozen Lake game, you could read the article found on medium, he help me a lot to understand how works the Q-Learning: <a href="https://medium.com/towards-data-science/q-learning-for-beginners-2837b777741">Q-Learning For Beginners by Maxime Labonne</a></br>
 </br></h4>
 
+
+<h1 align="center"> Welcome on one of the most ultra-detailed version of the
+  <br>Frozen-Lake Q-Learning project
+<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-200-major-update-date-13042024-at-653-pm-cetutc1">Ver. 2.1.0</a></br>
+</br></h1>
+
 ## Table of content
 - [About][1]
 - [Datas][2]
@@ -21,11 +27,6 @@
 [4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "formula"
 [5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "maps"
 [6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/README.md#q-injection "Q-Injection"
-
-<h1 align="center"> Welcome on one of the most ultra-detailed version of the
-  <br>Frozen-Lake Q-Learning project
-<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-200-major-update-date-13042024-at-653-pm-cetutc1">Ver. 2.0.0</a></br>
-</br></h1>
   
 ## About
 Like his name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.

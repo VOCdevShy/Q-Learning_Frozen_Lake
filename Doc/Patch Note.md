@@ -8,7 +8,7 @@
     - [Ver. 1.2.3][6]
     - [Ver. 1.2.4][7]
 - [Ver. 2.0.0][8]
-  -[Ver. 2.1.0][9]
+  - [Ver. 2.1.0][9]
   
 [1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-101-minor-update-date-29022024-at-1020-am-cetutc1 "Version 1.0.1"
 [2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-110-major-update-date-01032024-at-0953-am-cetutc1 "Version 1.1.0"

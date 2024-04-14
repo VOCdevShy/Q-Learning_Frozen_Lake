@@ -3,9 +3,8 @@
 This project is made to inject different types of Q-Tables in the Q-Table for the Q-Learning Frozen Lake.
 
 ### Here's the type of Q-Table you could inject:
-- Virgin Q-Table
 - Randomize Q-Table
-- Optimized Q-Table
+- Trained Q-Table
 - 2 Rewards Q-Table
 
 ### **⚠️WARNING!⚠️** 

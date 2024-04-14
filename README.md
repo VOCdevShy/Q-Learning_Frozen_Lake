@@ -10,7 +10,7 @@
 
 <h1 align="center"> Welcome on one of the most ultra-detailed version of the
   <br>Frozen-Lake Q-Learning project
-<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-200-major-update-date-13042024-at-653-pm-cetutc1">Ver. 2.1.0</a></br>
+<br><a href="https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/Doc/Patch%20Note.md#version-210-medium-update-date-14042024-at-1520-pm-cetutc1">Ver. 2.1.0</a></br>
 </br></h1>
 
 ## Table of content

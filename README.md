@@ -26,7 +26,7 @@
 [2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#datas-you-could-obtain "Datas"
 [3]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#tools "Tools"
 [4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "Formula"
-[5]: "Package"
+[5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#packages "Package"
 [6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "Maps"
 [7]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/README.md#q-injection "Q-Injection"
   

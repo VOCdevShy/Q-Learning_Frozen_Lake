@@ -15,24 +15,36 @@
 
 ## Table of content
 - [About][1]
+  - [Packages][5]
 - [Datas][2]
 - [Tools][3]
-  - [Maps][5]
-  - [Q-Injection][6]
+  - [Maps][6]
+  - [Q-Injection][7]
 - [Q-Table formula][4]
 
 [1]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#about-the-program "About"
 [2]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#datas-you-could-obtain "Datas"
 [3]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#tools "Tools"
-[4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "formula"
-[5]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "maps"
-[6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/README.md#q-injection "Q-Injection"
+[4]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#for-those-who-are-interested-by-the-calculation-of-the-q-table-here-is-an-explication--hope-it-helps-you-to-understand-the-q-learning "Formula"
+[5]: "Package"
+[6]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake?tab=readme-ov-file#maps "Maps"
+[7]: https://github.com/VOCdevShy/Q-Learning_Frozen_Lake/blob/main/README.md#q-injection "Q-Injection"
   
 ## About
 Like his name is telling, the project is an ultra-detailed version of the Frozen-Lake Q-Learning project.
 <br>This program allow to train an agent on the Frozen-Lake game in a range of episodes that the user enter at the start of the program. This program use the Exploration X Exploitation method for the training. That means that the agent explore the environment but also use the updated Q-Table to have a better update of the Q-Table at the end.
 <br>The program offers the user the possibility of testing the updated Q-Table obtained by following the training.</br> 
 During the training like during the test, you have a lot of datas that are detailed in the console during the sessions.</br>
+
+### Packages
+For this project you need some packages to install to run correctly the project:
+
+1. gymnasium(ToyText): `pip install "gymnasium[toytext]"`
+2. matplotlib.pyplot: `pip install matplotlib.pyplot`
+3. numpy: `pip install numpy`
+4. pygame: `pip install pygame`
+5. time: `pip install time`
+6. warning: `pip install warning` (optional only hide an error)
 
 ## Obtainables datas
   - `nb_success`: Is use in the formula `nb_sucess/episodes*100` to calculate the success rate of the training and of the test of the training
@@ -66,8 +78,8 @@ But also to train them to obtain better results using the Exploration X Exploita
 <br> (_For more information about the Q-Injection read the_ `injection.md` _file in the_ `tools` _folder_)
 
 
-<h3>For those who are interested by the calculation of the Q-Table here is an explication:
-  <br>(Hope it helps you to understand the Q-Learning)</br></h3>
+<h2>For those who are interested by the calculation of the Q-Table here is an explication:
+  <br>(Hope it helps you to understand the Q-Learning)</br></h2>
 
 ```
 qtable[state, action] = qtable[state, action] + alpha * (reward + gamma * np.max(qtable[next_state, :]) - qtable[state, action])
